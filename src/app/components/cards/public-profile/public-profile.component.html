@@ -1,0 +1,77 @@
+<form class="public-profile-form">
+  
+  <div>
+    <h4>Name</h4>
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="First Name">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Last Name">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div>
+    <h4>Bio</h4>
+    <p>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="GitHub Repository Collector"></textarea>
+      </mat-form-field>
+    </p>
+  </div>
+
+  <div>
+    <h4>Emails</h4>
+    
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Primary Email">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Secondary Email">
+    </mat-form-field>
+          
+  </div>
+
+  <div>
+    <h4>Address</h4>
+    <p>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Permanent Address">21 Jump Street</textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Temporary Address">22 Jump Street</textarea>
+      </mat-form-field>
+    </p>
+  </div>
+
+  <div>
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="City">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="State">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput #postalCode maxlength="6" placeholder="Postal Code" value="978132">
+            <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</form>

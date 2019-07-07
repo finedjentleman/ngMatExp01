@@ -1,0 +1,14 @@
+<mat-list>
+  <h3 mat-subheader>Issues</h3>
+  <mat-list-item *ngFor="let issue of issues">
+    <mat-icon mat-list-icon>warning</mat-icon>
+    <h4 mat-line>{{issue.subject}}</h4>
+    <p mat-line>{{issue.info}}</p>
+  </mat-list-item>
+  <h3 mat-subheader>Approvals</h3>
+  <mat-list-item *ngFor="let approval of approvals">
+    <mat-icon mat-list-icon>comment</mat-icon>
+    <h4 mat-line>{{approval.subject}}</h4>
+    <p mat-line>{{approval.info}}</p>
+  </mat-list-item>
+</mat-list>

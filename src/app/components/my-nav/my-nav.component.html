@@ -1,0 +1,82 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    
+    <!-- SIDE MENU -->
+    <mat-toolbar>Menu</mat-toolbar>
+    
+    <mat-nav-list>
+      <a mat-list-item routerLink="/profile">Profile</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/tasks']">Tasks</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/goals']">Goals</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/reports']">Reports</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/settings']">Settings</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      
+      <button mat-button [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>
+        <b>Dashboard</b>
+      </button>
+      
+      <mat-divider [vertical]="true"></mat-divider>
+
+      <button mat-button [matMenuTriggerFor]="events"><b>Events</b></button>
+      <mat-menu #events="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="ongoing">Ongoing</button>
+        <button mat-menu-item [matMenuTriggerFor]="upcoming">Upcoming</button>
+      </mat-menu>
+      <mat-menu #upcoming="matMenu">
+        <button mat-menu-item matTooltip="Urgent!" matTooltipPosition="after">Deadlines</button>
+        <button mat-menu-item matTooltip="Attend Us!" matTooltipPosition="after">Meetings</button>
+        <button mat-menu-item matTooltip="Remember the days!" matTooltipPosition="after">Birthdays</button>
+      </mat-menu>
+      <mat-menu #ongoing="matMenu">
+        <button mat-menu-item matTooltip="Learn something today!" matTooltipPosition="after">Webinars</button>
+        <button mat-menu-item matTooltip="As good as Ted!" matTooltipPosition="after">Presentations</button>
+      </mat-menu>
+
+      <span class="fill-remaining-space"></span>
+      
+      <button mat-icon-button aria-label="icon-button with a notifications icon">
+        <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+      </button>
+      
+
+      <button mat-button [matMenuTriggerFor]="about"><b>About</b></button>
+      <mat-menu #about="matMenu">
+        <button mat-menu-item>About the app</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="contact"><b>Contact Us</b></button>
+      <mat-menu #contact="matMenu">
+        <button mat-menu-item>Email</button>
+        <button mat-menu-item>GitHub</button>
+      </mat-menu>
+    
+    </mat-toolbar>
+    <!-- ROUTER OUTLET -->
+    <router-outlet></router-outlet>
+  
+  </mat-sidenav-content>
+</mat-sidenav-container>

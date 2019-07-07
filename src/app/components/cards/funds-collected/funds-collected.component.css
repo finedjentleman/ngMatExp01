@@ -1,0 +1,14 @@
+.middle-space{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.h2-space{
+    margin: 10px;
+}
+
+.progress-bar-margin{
+    margin: 0 10px;
+}

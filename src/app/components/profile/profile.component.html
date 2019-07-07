@@ -1,0 +1,31 @@
+<milestones-per-month></milestones-per-month>
+
+<!--PRESENTATIONS CARD-->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Presentations</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <!--
+    <hr>
+    -->
+    <mat-card-content>
+        <div style='min-height:800px'><!--IMPORTANT
+            So that page doesn't scroll up when switching tabs-->
+            <mat-tab-group>
+                <mat-tab label="Given">
+                    <presentations-given></presentations-given>
+                </mat-tab>
+                <mat-tab label="Attended">
+                    <presentations-attended></presentations-attended>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<!--FUNDS RAISED CARD-->
+<funds-collected></funds-collected>
+
+<budget></budget>
